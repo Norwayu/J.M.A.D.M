@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjirfc5kf8f8h"]
+
+[ext_resource type="PackedScene" uid="uid://gib0g217paet" path="res://Scenes/Jugador.tscn" id="1_v3rpw"]
+[ext_resource type="PackedScene" uid="uid://of6kf5tysg8u" path="res://Scenes/Blocks/Block1.tscn" id="2_12fag"]
+[ext_resource type="PackedScene" uid="uid://c2mor687hcd8i" path="res://Scenes/Blocks/GoalBlock1.tscn" id="3_1q6tm"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(250, -100)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Jugador" parent="." instance=ExtResource("1_v3rpw")]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Block1" parent="Map" instance=ExtResource("2_12fag")]
+scale = Vector2(6, 3.208)
+
+[node name="Block2" parent="Map" instance=ExtResource("2_12fag")]
+position = Vector2(124, 0)
+scale = Vector2(4, 0.951)
+
+[node name="Block3" parent="Map" instance=ExtResource("2_12fag")]
+position = Vector2(165, -38)
+scale = Vector2(0.7, 4)
+
+[node name="GoalMet" parent="." instance=ExtResource("3_1q6tm")]
