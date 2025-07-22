@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cquok04ermdej" path="res://Scripts/block_func.gd" id="1_8kp8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kp8b"]
+size = Vector2(23, 23)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_85cnr"]
 

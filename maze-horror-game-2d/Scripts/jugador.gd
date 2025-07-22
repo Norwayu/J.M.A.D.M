@@ -3,26 +3,32 @@ extends CharacterBody2D
 @export var SPEED = 200.0
 @export var Raycast:RayCast2D
 
+var Damaging = false
+
 #var TouchedColisionTables = {}
 
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("Izquierda","Derecha","Arriba","Abajo")
-	velocity = direction * SPEED
-	move_and_slide()
+	if GameManager.PlrMovement:
+		velocity = direction * SPEED
+		move_and_slide()
+		if direction:
+			Raycast.position = direction
+			Raycast.target_position = direction * 5
 	
-	Raycast.target_position = direction
 	
 	var HitRay = Raycast.get_collider()
-	
 	if not HitRay:
-		pass
-		#print("NOO")
+		if not Damaging:
+			Damaging = true
+		else:
+			GameManager.PlrMovement = false
 	else:
-		pass
-		#print(HitRay.name)
+		print("uop")
 	
 	if HitRay:
 		if HitRay.name == "GoalBlock1":
 			print("Void")
 			GameManager.NextScene()
+			Damaging = false

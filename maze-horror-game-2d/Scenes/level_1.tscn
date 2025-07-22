@@ -10,8 +10,8 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 0)
-offset = Vector2(300, -100)
-zoom = Vector2(1.3, 1.3)
+offset = Vector2(240, -100)
+zoom = Vector2(1.8, 1.8)
 
 [node name="Map" type="Node2D" parent="."]
 z_index = 1
@@ -39,19 +39,19 @@ scale = Vector2(3.12, 3.88)
 
 [node name="Block6" parent="Map" instance=ExtResource("1_vk57k")]
 position = Vector2(305, -119)
-scale = Vector2(5.88, 1.16)
+scale = Vector2(6, 1.16)
 priority = 1
 
 [node name="Block7" parent="Map" instance=ExtResource("1_vk57k")]
-position = Vector2(365, -144)
+position = Vector2(365, -156)
 rotation = 1.5708
-scale = Vector2(3.12, 1.16)
+scale = Vector2(3.92, 1.16)
 priority = 1
 
 [node name="Block8" parent="Map" instance=ExtResource("1_vk57k")]
 position = Vector2(413, -180)
 scale = Vector2(5, 2)
-priority = 1
+priority = 2
 
 [node name="Block9" parent="Map" instance=ExtResource("1_vk57k")]
 position = Vector2(461, -125)
@@ -65,28 +65,10 @@ scale = Vector2(4.76, 1.16)
 priority = 1
 
 [node name="GoalBlock1" parent="." instance=ExtResource("3_xfk5q")]
-position = Vector2(607, -79)
+top_level = true
+position = Vector2(557, -79)
+priority = 5
 
-[connection signal="area_entered" from="Map/Block4" to="Jugador" method="_on_block_2_area_entered"]
-[connection signal="area_exited" from="Map/Block4" to="Jugador" method="_on_block_2_area_exited"]
-[connection signal="area_entered" from="Map/Block5" to="Jugador" method="_on_block_2_area_entered"]
-[connection signal="area_exited" from="Map/Block5" to="Jugador" method="_on_block_2_area_exited"]
-[connection signal="area_entered" from="Map/Block6" to="Jugador" method="_on_block_2_area_entered"]
-[connection signal="area_exited" from="Map/Block6" to="Jugador" method="_on_block_2_area_exited"]
-[connection signal="area_entered" from="Map/Block7" to="Jugador" method="_on_block_2_area_entered"]
-[connection signal="area_exited" from="Map/Block7" to="Jugador" method="_on_block_2_area_exited"]
-[connection signal="area_entered" from="Map/Block8" to="Jugador" method="_on_block_2_area_entered"]
-[connection signal="area_exited" from="Map/Block8" to="Jugador" method="_on_block_2_area_exited"]
 [connection signal="area_entered" from="GoalBlock1" to="Jugador" method="_on_goal_block_1_area_entered"]
 
 [editable path="Jugador"]
-[editable path="Map/Block1"]
-[editable path="Map/Block2"]
-[editable path="Map/Block3"]
-[editable path="Map/Block4"]
-[editable path="Map/Block5"]
-[editable path="Map/Block6"]
-[editable path="Map/Block7"]
-[editable path="Map/Block8"]
-[editable path="Map/Block9"]
-[editable path="Map/Block10"]

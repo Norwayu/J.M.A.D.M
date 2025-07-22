@@ -1,6 +1,7 @@
 extends Node
 var Scene
-var ReadyPort
+var ReadyPort:bool
+var PlrMovement:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Maze horror game 2d"
-run/main_scene="uid://dgy1jm24maeg"
+run/main_scene="uid://omq6si3f3ny8"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
