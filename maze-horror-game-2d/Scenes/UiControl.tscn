@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://xnsmictqpk7p"]
+
+[ext_resource type="Script" uid="uid://bt2mb242ej08j" path="res://Scripts/UiManager.gd" id="1_u3kih"]
+[ext_resource type="Texture2D" uid="uid://bcktaxxkdiyha" path="res://Sprite/Jumpscare/JeffKiller.png" id="2_8yafq"]
+[ext_resource type="Texture2D" uid="uid://bbv2tclvwx8nc" path="res://Sprite/Jumpscare/MangaIncidente.png" id="3_8s8ob"]
+[ext_resource type="AudioStream" uid="uid://c2qkqyseva5gr" path="res://Sounds/JUMPSCARE.mp3" id="3_rrwxh"]
+[ext_resource type="Texture2D" uid="uid://b87q7mnsg0e6o" path="res://Sprite/Jumpscare/NekoShoteame.jpg" id="4_456ec"]
+[ext_resource type="Texture2D" uid="uid://fsd6nifv31s4" path="res://Sprite/Jumpscare/SPAMTOM.png" id="5_cuuon"]
+[ext_resource type="Texture2D" uid="uid://t0nrgpmgyh0j" path="res://Sprite/Jumpscare/Trabajo En Un Papel.jpg" id="6_uukgi"]
+[ext_resource type="Texture2D" uid="uid://xayu4rlyol1y" path="res://Sprite/UiSprite/ArrowUp.png" id="7_uukgi"]
+[ext_resource type="Texture2D" uid="uid://y63p5dljltnd" path="res://Sprite/UiSprite/ArrowDown.png" id="8_6nnsl"]
+[ext_resource type="Texture2D" uid="uid://clk8ud5q2335q" path="res://Sprite/UiSprite/ArrowLeft.png" id="9_bn85q"]
+[ext_resource type="Texture2D" uid="uid://cd8qui1t54qba" path="res://Sprite/UiSprite/Arrow.png" id="10_g0gca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rok05"]
+size = Vector2(100, 100)
+
+[node name="UiControl" type="Control" node_paths=PackedStringArray("Jumpscare")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u3kih")
+Jumpscare = NodePath("JumpscareImage")
+PngImagesJumpscares = Array[Texture2D]([ExtResource("2_8yafq"), ExtResource("3_8s8ob"), ExtResource("4_456ec"), ExtResource("5_cuuon"), ExtResource("6_uukgi")])
+metadata/_edit_use_anchors_ = true
+
+[node name="MobileUi" type="Control" parent="."]
+top_level = true
+z_index = 3
+z_as_relative = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpButton" type="TouchScreenButton" parent="MobileUi"]
+position = Vector2(948, 348)
+texture_normal = ExtResource("7_uukgi")
+shape = SubResource("RectangleShape2D_rok05")
+action = "Arriba"
+
+[node name="DownButton" type="TouchScreenButton" parent="MobileUi"]
+position = Vector2(947, 547)
+texture_normal = ExtResource("8_6nnsl")
+shape = SubResource("RectangleShape2D_rok05")
+action = "Abajo"
+
+[node name="LeftButton" type="TouchScreenButton" parent="MobileUi"]
+position = Vector2(847, 448)
+texture_normal = ExtResource("9_bn85q")
+shape = SubResource("RectangleShape2D_rok05")
+action = "Izquierda"
+
+[node name="RightButton" type="TouchScreenButton" parent="MobileUi"]
+position = Vector2(1049, 447)
+texture_normal = ExtResource("10_g0gca")
+shape = SubResource("RectangleShape2D_rok05")
+action = "Derecha"
+
+[node name="JumpscareImage" type="TextureRect" parent="."]
+z_index = 10
+layout_mode = 1
+offset_right = 196.0
+offset_bottom = 180.0
+scale = Vector2(5.88175, 3.61384)
+flip_h = true
+
+[node name="JumpscareSound" type="AudioStreamPlayer" parent="JumpscareImage"]
+stream = ExtResource("3_rrwxh")
+volume_db = 3.0

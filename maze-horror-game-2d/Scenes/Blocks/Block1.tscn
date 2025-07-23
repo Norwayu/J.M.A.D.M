@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://of6kf5tysg8u"]
+
+[ext_resource type="Script" uid="uid://cquok04ermdej" path="res://Scripts/block_func.gd" id="1_8kp8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kp8b"]
+size = Vector2(23, 23)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_85cnr"]
+
+[node name="Block1" type="Area2D"]
+script = ExtResource("1_8kp8b")
+
+[node name="Colision" type="CollisionShape2D" parent="."]
+physics_interpolation_mode = 1
+z_index = 1
+shape = SubResource("RectangleShape2D_8kp8b")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.184896, 1, 0.987264, 1)
+scale = Vector2(25, 25)
+texture = SubResource("CanvasTexture_85cnr")

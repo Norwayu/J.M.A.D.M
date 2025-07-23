@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://686n2mfl1ess"]
+
+[ext_resource type="Script" uid="uid://cquok04ermdej" path="res://Scripts/block_func.gd" id="1_lia1k"]
+[ext_resource type="AudioStream" uid="uid://b8fku1q44kqs0" path="res://Sounds/ButtonClick.mp3" id="2_kivmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kivmv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_suh38"]
+
+[node name="BlockDoor" type="Node2D"]
+
+[node name="ButtonD" type="Area2D" parent="." node_paths=PackedStringArray("TargetBlock", "SoundGet")]
+position = Vector2(26, 0)
+script = ExtResource("1_lia1k")
+BlockType = "BlockDoor"
+TargetBlock = NodePath("../DoorButtoned")
+SoundGet = NodePath("../ButtonClick")
+
+[node name="Colision" type="CollisionShape2D" parent="ButtonD"]
+shape = SubResource("RectangleShape2D_kivmv")
+
+[node name="Border" type="Sprite2D" parent="ButtonD"]
+modulate = Color(0.103007, 0.149255, 0.158854, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_suh38")
+
+[node name="MainSprite" type="Sprite2D" parent="ButtonD"]
+modulate = Color(0.469666, 0.695348, 0.742188, 1)
+scale = Vector2(17, 17)
+texture = SubResource("CanvasTexture_suh38")
+
+[node name="DoorButtoned" type="StaticBody2D" parent="."]
+
+[node name="Colision" type="CollisionShape2D" parent="DoorButtoned"]
+shape = SubResource("RectangleShape2D_kivmv")
+
+[node name="Touched" type="Sprite2D" parent="DoorButtoned"]
+modulate = Color(0, 0.351563, 0.302124, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_suh38")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_kivmv")
+max_distance = 500.0
