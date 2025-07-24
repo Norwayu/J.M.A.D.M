@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4j0b4pr2noqs"]
+
+[ext_resource type="PackedScene" uid="uid://gib0g217paet" path="res://Scenes/Jugador.tscn" id="2_rc141"]
+[ext_resource type="PackedScene" uid="uid://of6kf5tysg8u" path="res://Scenes/Blocks/Block1.tscn" id="3_yy6i0"]
+[ext_resource type="PackedScene" uid="uid://c2mor687hcd8i" path="res://Scenes/Blocks/GoalBlock1.tscn" id="4_167vu"]
+[ext_resource type="PackedScene" uid="uid://686n2mfl1ess" path="res://Scenes/Blocks/BlockDoor.tscn" id="4_t8c31"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Jugador" parent="." instance=ExtResource("2_rc141")]
+position = Vector2(-524, 317)
+
+[node name="Raycast" parent="Jugador/Pivot" index="0"]
+position = Vector2(0, 4)
+collide_with_bodies = false
+
+[node name="GoalMet" parent="." instance=ExtResource("4_167vu")]
+position = Vector2(502, 269)
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Block3" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-522, -285)
+scale = Vector2(3.16, 2.84)
+
+[node name="Block4" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-416, 159)
+scale = Vector2(8.77535, 1.50152)
+
+[node name="Block13" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-77, 230)
+scale = Vector2(12.6954, 1.50152)
+
+[node name="Block14" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(61, 203)
+scale = Vector2(1.7418, 8.42152)
+
+[node name="Block5" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-328, 56)
+scale = Vector2(1.73483, 9.47501)
+
+[node name="Block11" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-286, -158)
+scale = Vector2(1.73483, 8.34857)
+
+[node name="Block12" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-437, 219)
+scale = Vector2(1.73483, 5.94857)
+
+[node name="Block6" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-231, -74)
+rotation = 1.5708
+scale = Vector2(1.7, 9.5)
+
+[node name="Block17" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-8.99997, 3.00002)
+rotation = 1.5708
+scale = Vector2(1.7, 9.5)
+
+[node name="Block15" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-8.99997, 93)
+rotation = 1.5708
+scale = Vector2(1.7, 9.5)
+
+[node name="Block16" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-106.5, 57)
+rotation = 1.5708
+scale = Vector2(4.3, 1.7)
+
+[node name="Block7" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-305, 28)
+rotation = 1.5708
+scale = Vector2(1.73483, 9.47501)
+
+[node name="Block8" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-413, -179)
+rotation = 1.5708
+scale = Vector2(1.73483, 9.47501)
+
+[node name="Block10" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-413, -179)
+rotation = 1.5708
+scale = Vector2(1.73483, 9.47501)
+
+[node name="Block9" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-215, 130)
+scale = Vector2(1.73483, 9.47501)
+
+[node name="Block2" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-522, -148)
+scale = Vector2(1.66495, 8.86829)
+
+[node name="Block1" parent="Map" instance=ExtResource("3_yy6i0")]
+position = Vector2(-522, 189)
+scale = Vector2(1.66495, 20.8283)
+
+[node name="BlockDoor" parent="." instance=ExtResource("4_t8c31")]
+position = Vector2(-520, -285)
+
+[node name="ButtonD" parent="BlockDoor" index="0"]
+position = Vector2(230, 47)
+
+[node name="DoorButtoned" parent="BlockDoor" index="1"]
+position = Vector2(193, 313)
+scale = Vector2(2.54457, 2.54841)
+
+[editable path="Jugador"]
+[editable path="BlockDoor"]

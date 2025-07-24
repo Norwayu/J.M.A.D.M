@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://gib0g217paet"]
+
+[ext_resource type="Script" uid="uid://bkvo4gdpuyjaj" path="res://Scripts/jugador.gd" id="1_mo433"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgxhv"]
+size = Vector2(15, 15)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mo433"]
+
+[node name="Jugador" type="CharacterBody2D" node_paths=PackedStringArray("Raycast", "PivotRotating")]
+z_index = 3
+script = ExtResource("1_mo433")
+Raycast = NodePath("Pivot/Raycast")
+PivotRotating = NodePath("Pivot")
+
+[node name="Colision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tgxhv")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(15, 15)
+texture = SubResource("CanvasTexture_mo433")
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Raycast" type="RayCast2D" parent="Pivot"]
+position = Vector2(0, 19)
+target_position = Vector2(-2.27299e-06, 13)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="Anti-Sordos 2000" type="AudioListener2D" parent="."]
+current = true
